@@ -75,7 +75,7 @@ def find_unique_common_items(items1, items2):
         >>> sorted(find_unique_common_items(["2", "1", 2], [2, 1]))
         [2]
     """
-    unique_items = set(items1) ^ set(items2)
+    unique_items = set(items1) & set(items2)
     return list(unique_items)
 
 

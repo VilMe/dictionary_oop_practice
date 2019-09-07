@@ -37,10 +37,9 @@ def without_duplicates(words):
         >>> sorted(without_duplicates([111111, 2, 33333, 2]))
         [2, 33333, 111111]
     """
-    set_words = set()
-    for word in words:
-        set_words.add(word)
-    return set_words
+    words = set(words)
+    
+    return list(words)
 
 
 def find_unique_common_items(items1, items2):
@@ -76,8 +75,8 @@ def find_unique_common_items(items1, items2):
         >>> sorted(find_unique_common_items(["2", "1", 2], [2, 1]))
         [2]
     """
-
-    return []
+    unique_items = set(items1) ^ set(items2)
+    return list(unique_items)
 
 
 def get_sum_zero_pairs(numbers):

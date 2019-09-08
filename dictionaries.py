@@ -105,8 +105,23 @@ def get_sum_zero_pairs(numbers):
         >>> sort_pairs( get_sum_zero_pairs([1, 3, -1, 1, 1, 0]) )
         [[-1, 1], [0, 0]]
     """
+    complement = {}
+    list_part = []
+    numbers = set(numbers)
+    numbers = list(numbers)
+    for number in numbers:
+        if number not in complement:
+            complement[number] = 0 - number
+    for i in range(len(numbers)):
+        numb_complement = complement[numbers[i]]
+        if numb_complement in numbers:
+            pair = (number, numb_complement)
+            list_part.append(pair)
+            index_of_comp = numbers.index(numb_complement)
+            numbers[index_of_comp] *= -1
 
-    return []
+    
+    return list_part 
 
 
 def top_chars(phrase):

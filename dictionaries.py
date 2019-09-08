@@ -107,11 +107,19 @@ def get_sum_zero_pairs(numbers):
     """
     
     zero_sum_pair = set()
+    numbers = set(numbers)
+    numbers = list(numbers)
+    numbers.sort()
     while numbers:
         current_number = numbers[0]
-        print(numbers[0])
-        numbers.remove(numbers[0])
-    return 
+        complement = current_number * -1
+        if current_number == 0:
+            zero_sum_pair.add((0, 0))
+        elif complement in numbers:
+            zero_sum_pair.add((current_number, complement))
+            numbers.remove(complement)
+        numbers.remove(current_number)
+    return list(zero_sum_pair)
 
 def top_chars(phrase):
     """Find most common character(s) in string.

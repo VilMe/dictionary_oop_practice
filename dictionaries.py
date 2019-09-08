@@ -106,7 +106,7 @@ def get_sum_zero_pairs(numbers):
         [[-1, 1], [0, 0]]
     """
     
-    zero_sum_pair = set()
+    zero_sum_pair = []
     numbers = set(numbers)
     numbers = list(numbers)
     numbers.sort()
@@ -114,12 +114,12 @@ def get_sum_zero_pairs(numbers):
         current_number = numbers[0]
         complement = current_number * -1
         if current_number == 0:
-            zero_sum_pair.add((0, 0))
+            zero_sum_pair.append([0, 0])
         elif complement in numbers:
-            zero_sum_pair.add((current_number, complement))
+            zero_sum_pair.append([current_number, complement])
             numbers.remove(complement)
         numbers.remove(current_number)
-    return list(zero_sum_pair)
+    return zero_sum_pair
 
 def top_chars(phrase):
     """Find most common character(s) in string.

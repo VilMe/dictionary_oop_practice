@@ -145,8 +145,25 @@ def top_chars(phrase):
     Do not count spaces, but count all other characters.
 
     """
+    max_char_count = 0
+    char_count_dic = {}
+    for char in phrase:
+        char = char.lower()
+        if char not in  " !,.":
+            if char_count_dic.get(char):
+                count = char_count_dic[char]
+                count += 1
+                char_count_dic[char] = count
+                if count > max_char_count:
+                    max_char_count = count
+            else:
+                char_count_dic[char] = 1
+    list_highs = []
+    for char in char_count_dic:
+        if char_count_dic[char] == max_char_count:
+            list_highs.append(char)
 
-    return []
+    return list_highs
 
 #####################################################################
 # You can ignore everything below this.

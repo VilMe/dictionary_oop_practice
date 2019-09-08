@@ -105,26 +105,13 @@ def get_sum_zero_pairs(numbers):
         >>> sort_pairs( get_sum_zero_pairs([1, 3, -1, 1, 1, 0]) )
         [[-1, 1], [0, 0]]
     """
-    complement = {}
-    list_part = []
-    numbers = set(numbers)
-    numbers = list(numbers)
-    print(numbers)
-    for number in numbers:
-        if number not in complement:
-            complement[number] = number * -1
-    print(complement)
-    for i in range(len(numbers)):
-        numb_complement = complement[numbers[i]]
-        if numb_complement in numbers:
-            pair = (number, numb_complement)
-            list_part.append(pair)
-            index_of_comp = numbers.index(numb_complement)
-            numbers[index_of_comp] *= -1
-
     
-    return list_part 
-
+    zero_sum_pair = set()
+    while numbers:
+        current_number = numbers[0]
+        print(numbers[0])
+        numbers.remove(numbers[0])
+    return 
 
 def top_chars(phrase):
     """Find most common character(s) in string.

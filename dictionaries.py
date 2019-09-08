@@ -109,9 +109,11 @@ def get_sum_zero_pairs(numbers):
     list_part = []
     numbers = set(numbers)
     numbers = list(numbers)
+    print(numbers)
     for number in numbers:
         if number not in complement:
-            complement[number] = 0 - number
+            complement[number] = number * -1
+    print(complement)
     for i in range(len(numbers)):
         numb_complement = complement[numbers[i]]
         if numb_complement in numbers:

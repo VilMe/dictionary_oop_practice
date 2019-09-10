@@ -7,5 +7,13 @@ class Student(object):
         self.address = address
 
 
+class Question(object):
+    """docstring for Question"""
+    def __init__(self, question, answer):
+        self.question = question
+        self.answer = answer
+
+
+        
         
         

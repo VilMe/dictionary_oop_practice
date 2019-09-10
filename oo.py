@@ -13,7 +13,12 @@ class Question(object):
         self.question = question
         self.answer = answer
 
-
+class Exame(object):
+    """docstring for Exame"""
+    def __init__(self, name):
+        self.name = name
+        self.questions = {}
+        
         
         
         
